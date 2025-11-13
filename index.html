@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cultural Sensitivity in Malaysian Social Media</title>
+    
+    <!-- Favicon (Inline SVG) -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 24 24%27 fill=%27none%27 stroke=%27%230284c7%27 stroke-width=%272%27 stroke-linecap=%27round%27 stroke-linejoin=%27round%27><path d=%27M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z%27></path></svg>">
+
+    <!-- SEO & Social Share Meta Tags -->
+    <meta name="description" content="An analysis of cultural miscommunication on Malaysian social media, examining its causes, impacts, and strategic recommendations for stakeholders.">
+    <meta name="author" content="Group 1G: Social Media Explosion">
+    
+    <!-- Open Graph (OG) Tags for social media previews -->
+    <meta property="og:title" content="Cultural Sensitivity in Malaysian Social Media">
+    <meta property="og:description" content="An analysis of cultural miscommunication, its causes, impacts, and strategic recommendations.">
+    <meta property="og:type" content="website">
+    <!-- TODO: Replace with your final GitHub Pages URL -->
+    <meta property="og:url" content="https://your-github-username.github.io/your-repo-name/">
+    <meta property="og:image" content="https://placehold.co/1200x630/0284c7/white?text=Digital+Sensitivity\nIn+Malaysia">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Google Font: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        /* Apply the Inter font family */
+        body {
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Custom class for the active nav link */
+        .nav-active {
+            color: #2563EB; /* text-blue-600 */
+            border-bottom-width: 2px;
+            border-color: #2563EB; /* border-blue-600 */
+        }
+        
+        /* Custom class for the active tab button */
+        .tab-active {
+            border-color: #2563EB; /* border-blue-600 */
+            color: #2563EB; /* text-blue-600 */
+            background-color: #EFF6FF; /* bg-blue-50 */
+        }
+
+        /* Hide default <details> marker */
+        summary::-webkit-details-marker {
+            display: none;
+        }
+
+        summary {
+            list-style: none;
+        }
+
+        /* Back to top button transitions */
+        #back-to-top {
+            transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+            opacity: 0;
+            visibility: hidden;
+        }
+        #back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-800">
+
+    <!-- Header & Navigation Bar -->
+    <header class="bg-white/95 backdrop-blur-sm shadow-sm sticky top-0 z-50">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo/Title -->
+                <div class="flex-shrink-0 flex items-center">
+                    <span class="font-bold text-xl text-blue-700">Digital Sensitivity</span>
+                </div>
+                
+                <!-- Desktop Navigation Links -->
+                <div class="hidden md:flex md:items-center md:space-x-8">
+                    <a href="#intro" class="nav-link text-gray-500 hover:text-blue-600 transition-colors duration-200" data-section="intro">Introduction</a>
+                    <a href="#analysis" class="nav-link text-gray-500 hover:text-blue-600 transition-colors duration-200" data-section="analysis">Analysis</a>
+                    <a href="#cases" class="nav-link text-gray-500 hover:text-blue-600 transition-colors duration-200" data-section="cases">Case Studies</a>
+                    <a href="#strategy" class="nav-link text-gray-500 hover:text-blue-600 transition-colors duration-200" data-section="strategy">Strategy</a>
+                    <a href="#recommendations" class="nav-link text-gray-500 hover:text-blue-600 transition-colors duration-200" data-section="recommendations">Recommendations</a>
+                    <a href="#conclusion" class="nav-link text-gray-500 hover:text-blue-600 transition-colors duration-200" data-section="conclusion">Conclusion</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500">
+                        <span class="sr-only">Open main menu</span>
+                        <i data-lucide="menu" class="block h-6 w-6"></i>
+                    </button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Mobile Menu, hidden by default -->
+        <div id="mobile-menu" class="md:hidden hidden">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#intro" class="nav-link-mobile text-gray-600 hover:bg-gray-50 hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium" data-section="intro">Introduction</a>
+                <a href="#analysis" class="nav-link-mobile text-gray-600 hover:bg-gray-50 hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium" data-section="analysis">Analysis</a>
+                <a href="#cases" class="nav-link-mobile text-gray-600 hover:bg-gray-50 hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium" data-section="cases">Case Studies</a>
+                <a href="#strategy" class="nav-link-mobile text-gray-600 hover:bg-gray-50 hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium" data-section="strategy">Strategy</a>
+                <a href="#recommendations" class="nav-link-mobile text-gray-600 hover:bg-gray-50 hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium" data-section="recommendations">Recommendations</a>
+                <a href="#conclusion" class="nav-link-mobile text-gray-600 hover:bg-gray-50 hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium" data-section="conclusion">Conclusion</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- 1.0 Hero / Introduction -->
+        <section id="intro" class="pt-24 pb-20 bg-gray-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-4xl mx-auto">
+                    <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900 tracking-tight">
+                        Cultural Sensitivity and Miscommunication in Malaysian Social Media
+                    </h1>
+                    <p class="mt-6 text-xl text-gray-600">
+                        An analysis of the "social media explosion" and its critical impact on a pluralistic society. This report examines the causes, impacts, and strategic responses to online cultural miscommunication.
+                    </p>
+                </div>
+                
+                <div class="mt-16 max-w-5xl mx-auto grid md:grid-cols-3 gap-8 items-center">
+                    <div class="md:col-span-1 flex justify-center items-center">
+                        <!-- Image updated -->
+                        <img src="https://apicms.thestar.com.my/uploads/images/2019/09/16/273272.jpg" alt="Malaysian Diversity" class="rounded-lg shadow-md object-cover w-full h-64 md:w-80 md:h-80">
+                    </div>
+                    <div class="md:col-span-2 space-y-4 text-gray-700">
+                        <p>The "social media explosion" has fundamentally altered human interaction, transcending boundaries. In Malaysia, a nation defined by its pluralistic demographics, this creates a high-stakes environment.</p>
+                        <p>While platforms like TikTok, X, and Instagram offer opportunities for exchange, they also amplify the potential for misinterpretation, stereotyping, and social discord. This report investigates this challenge and proposes strategic interventions.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2.0 Issue Analysis -->
+        <section id="analysis" class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto">
+                    <h2 class="text-base font-semibold text-blue-600 tracking-wide uppercase">Issue Analysis</h2>
+                    <p class="mt-2 text-3xl font-extrabold text-gray-900 sm:text-4xl">
+                        Why Does Miscommunication Happen?
+                    </p>
+                </div>
+
+                <!-- Image added -->
+                <div class="mt-12 max-w-2xl mx-auto">
+                    <img src="https://www.culturemonkey.io/employee-engagement/content/images/2024/01/miscommunication-in-the-workplace-1.png" alt="Miscommunication" class="rounded-lg shadow-md w-full object-cover">
+                </div>
+
+                <div class="mt-16 grid md:grid-cols-2 gap-8">
+                    <!-- 2.1 Causes -->
+                    <div class="bg-gray-50 rounded-xl shadow-lg p-8">
+                        <div class="flex items-center space-x-4">
+                            <div class="flex-shrink-0 w-12 h-12 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center">
+                                <i data-lucide="cloud-fog" class="w-6 h-6"></i>
+                            </div>
+                            <h3 class="text-2xl font-semibold text-gray-900">2.1 Causes of Miscommunication</h3>
+                        </div>
+                        <!-- Accordion for Causes -->
+                        <div class="mt-6 space-y-4">
+                            <details class="group rounded-lg bg-white p-4 shadow-sm" open>
+                                <summary class="flex items-center justify-between cursor-pointer list-none">
+                                    <span class="font-semibold text-gray-800">
+                                        <i data-lucide="check" class="inline w-5 h-5 text-green-500 mr-3"></i>
+                                        Lack of Cultural Literacy
+                                    </span>
+                                    <i data-lucide="chevron-down" class="w-5 h-5 text-gray-500 transition-transform duration-200 group-open:rotate-180"></i>
+                                </summary>
+                                <p class="mt-3 text-gray-700 pl-8">
+                                    One of the main causes of cultural miscommunication is the lack of cultural literacy and awareness. Many users engage on social media without fully understanding the cultural contexts of others. When someone shares a joke, picture, or opinion, they may not realise that it could be perceived as offensive or insensitive by people from different backgrounds. What is considered humorous or acceptable in one culture may be viewed as rude or disrespectful in another.
+                                </p>
+                            </details>
+                            <details class="group rounded-lg bg-white p-4 shadow-sm">
+                                <summary class="flex items-center justify-between cursor-pointer list-none">
+                                    <span class="font-semibold text-gray-800">
+                                        <i data-lucide="check" class="inline w-5 h-5 text-green-500 mr-3"></i>
+                                        Stereotyping & Biased Representation
+                                    </span>
+                                    <i data-lucide="chevron-down" class="w-5 h-5 text-gray-500 transition-transform duration-200 group-open:rotate-180"></i>
+                                </summary>
+                                <p class="mt-3 text-gray-700 pl-8">
+                                    Social media often becomes a space where stereotypes are formed, reinforced, and spread rapidly. Users may generalise or make assumptions about certain groups based on race, religion, or nationality, which can be reflected through memes, comments, or even news posts. These biased portrayals oversimplify or mock cultural identities, leading to feelings of disrespect and misrepresentation.
+                                </p>
+                            </details>
+                            <details class="group rounded-lg bg-white p-4 shadow-sm">
+                                <summary class="flex items-center justify-between cursor-pointer list-none">
+                                    <span class="font-semibold text-gray-800">
+                                        <i data-lucide="check" class="inline w-5 h-5 text-green-500 mr-3"></i>
+                                        Language Barriers
+                                    </span>
+                                    <i data-lucide="chevron-down" class="w-5 h-5 text-gray-500 transition-transform duration-200 group-open:rotate-180"></i>
+                                </summary>
+                                <p class="mt-3 text-gray-700 pl-8">
+                                    Since social media brings together users from various linguistic backgrounds, words and expressions can easily be misunderstood. A phrase that sounds friendly or humorous in one language might come across as rude or confusing in another. Even emojis and abbreviations can carry different meanings across cultures. These differences often result in unintended offence or unnecessary conflict.
+                                </p>
+                            </details>
+                            <details class="group rounded-lg bg-white p-4 shadow-sm">
+                                <summary class="flex items-center justify-between cursor-pointer list-none">
+                                    <span class="font-semibold text-gray-800">
+                                        <i data-lucide="check" class="inline w-5 h-5 text-green-500 mr-3"></i>
+                                        Fast-Paced Posting Culture
+                                    </span>
+                                    <i data-lucide="chevron-down" class="w-5 h-5 text-gray-500 transition-transform duration-200 group-open:rotate-180"></i>
+                                </summary>
+                                <p class="mt-3 text-gray-700 pl-8">
+                                    Many users prioritise speed over accuracy or sensitivity, posting content impulsively without verifying facts or considering how others might interpret their message. This often leads to the spread of misinformation and culturally insensitive remarks. The pressure to post quickly discourages thoughtful communication, making miscommunication more likely.
+                                </p>
+                            </details>
+                            <details class="group rounded-lg bg-white p-4 shadow-sm">
+                                <summary class="flex items-center justify-between cursor-pointer list-none">
+                                    <span class="font-semibold text-gray-800">
+                                        <i data-lucide="check" class="inline w-5 h-5 text-green-500 mr-3"></i>
+                                        Algorithm-Driven Exposure
+                                    </span>
+                                    <i data-lucide="chevron-down" class="w-5 h-5 text-gray-500 transition-transform duration-200 group-open:rotate-180"></i>
+                                </summary>
+                                <p class="mt-3 text-gray-700 pl-8">
+                                    Social media algorithms are designed to push content to wide and diverse audiences, often beyond the creator’s intended reach. A post meant for a local audience might suddenly be viewed by people from completely different cultures. Because algorithms prioritise engagement rather than cultural context, posts that attract attention are spread rapidly, regardless of whether they might be misinterpreted.
+                                </p>
+                            </details>
+                        </div>
+                    </div>
+
+                    <!-- 2.2 Impacts -->
+                    <div class="bg-red-50 rounded-xl shadow-lg p-8">
+                        <div class="flex items-center space-x-4">
+                            <div class="flex-shrink-0 w-12 h-12 bg-red-100 text-red-600 rounded-full flex items-center justify-center">
+                                <i data-lucide="alert-triangle" class="w-6 h-6"></i>
+                            </div>
+                            <h3 class="text-2xl font-semibold text-gray-900">2.2 Impact of Insensitivity</h3>
+                        </div>
+                        <!-- Accordion for Impacts -->
+                        <div class="mt-6 space-y-4">
+                            <details class="group rounded-lg bg-white p-4 shadow-sm" open>
+                                <summary class="flex items-center justify-between cursor-pointer list-none">
+                                    <span class="font-semibold text-gray-800">
+                                        <i data-lucide="x-circle" class="inline w-5 h-5 text-red-500 mr-3"></i>
+                                        Public Outrage
+                                    </span>
+                                    <i data-lucide="chevron-down" class="w-5 h-5 text-gray-500 transition-transform duration-200 group-open:rotate-180"></i>
+                                </summary>
+                                <p class="mt-3 text-gray-700 pl-8">
+                                    The consequences are evident in high-profile incidents. For example, the 2024 KK Super Mart “Allah socks” controversy caused nationwide outrage and multiple official apologies, demonstrating how misusing religious symbols can damage public trust. Similarly, in 2025, Prasarana’s HYGR deodorant ad faced criticism for stereotyping people with darker skin tones, highlighting how media can reinforce harmful biases.
+                                </p>
+                            </details>
+                            <details class="group rounded-lg bg-white p-4 shadow-sm">
+                                <summary class="flex items-center justify-between cursor-pointer list-none">
+                                    <span class="font-semibold text-gray-800">
+                                        <i data-lucide="x-circle" class="inline w-5 h-5 text-red-500 mr-3"></i>
+                                        Reputational Damage
+                                    </span>
+                                    <i data-lucide="chevron-down" class="w-5 h-5 text-gray-500 transition-transform duration-200 group-open:rotate-180"></i>
+                                </summary>
+                                <p class="mt-3 text-gray-700 pl-8">
+                                    Organisations or influencers linked to offensive content face immediate and lasting reputational damage. Examples include:
+                                    <ul class="list-disc pl-5 mt-2 space-y-1">
+                                        <li><strong>Nippon Sushi MY (2022):</strong> TikTok video mocking the Japanese language.</li>
+                                        <li><strong>Big Pharmacy (2023):</strong> Promotional video stereotyping Indian cashiers.</li>
+                                        <li><strong>Darsa Fried Chicken (DFC) (2024):</strong> Racially offensive Facebook post.</li>
+                                        <li><strong>Padini (2025):</strong> TikTok video criticised for body-shaming.</li>
+                                    </ul>
+                                    <span class="block mt-2">These cases show how quickly insensitive content can go viral, erode public trust, and force companies into crisis management.</span>
+                                </p>
+                            </details>
+                            <details class="group rounded-lg bg-white p-4 shadow-sm">
+                                <summary class="flex items-center justify-between cursor-pointer list-none">
+                                    <span class="font-semibold text-gray-800">
+                                        <i data-lucide="x-circle" class="inline w-5 h-5 text-red-500 mr-3"></i>
+                                        Personal & Psychological Harm
+                                    </span>
+                                    <i data-lucide="chevron-down" class="w-5 h-5 text-gray-500 transition-transform duration-200 group-open:rotate-180"></i>
+                                </summary>
+                                <p class="mt-3 text-gray-700 pl-8">
+                                    The effects are also deeply personal. Individuals who are mocked or misrepresented may experience humiliation, anger, and social isolation, leading to anxiety. Repeated exposure can lower self-esteem, and a 2025 study on “3R issues” (race, religion, and royalty) found that recurring microaggressions leave Malaysian youth feeling detached from their national identity and disillusioned with social fairness.
+                                </p>
+                            </details>
+                            <details class="group rounded-lg bg-white p-4 shadow-sm">
+                                <summary class="flex items-center justify-between cursor-pointer list-none">
+                                    <span class="font-semibold text-gray-800">
+                                        <i data-lucide="x-circle" class="inline w-5 h-5 text-red-500 mr-3"></i>
+                                        Societal Erosion
+                                    </span>
+                                    <i data-lucide="chevron-down" class="w-5 h-5 text-gray-500 transition-transform duration-200 group-open:rotate-180"></i>
+                                </summary>
+                                <p class="mt-3 text-gray-700 pl-8">
+                                    Insufficient digital literacy education contributes to frequent intercultural misunderstandings online. Exposure to divisive content, as noted by Kops (2025), erodes empathy and weakens Malaysia’s social unity. These findings illustrate that cultural insensitivity causes both emotional harm and societal disruption, requiring a focus on strengthening cultural literacy and ethical digital standards.
+                                </p>
+                            </details>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3.0 Case Studies -->
+        <section id="cases" class="py-20 bg-gray-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto">
+                    <h2 class="text-base font-semibold text-blue-600 tracking-wide uppercase">Case Studies</h2>
+                    <p class="mt-2 text-3xl font-extrabold text-gray-900 sm:text-4xl">
+                        When Communication Fails: Real-World Examples
+                    </p>
+                </div>
+                
+                <div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Case Study 1 -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                        <!-- Image updated -->
+                        <img src="https://s.yimg.com/ny/api/res/1.2/678sY6WPr.bFEjtIMhw3QA--/YXBwaWQ9aGlnaGxhbmRlcjt3PTIwMDA7aD0xMDQ4O2NmPXdlYnA-/https://media.zenfs.com/en/mmail.com.my/198828ab45f7447354fbc008b07c14a9" alt="foodpanda Pollywood Case Study" class="w-full h-48 object-cover">
+                        <div class="p-8">
+                            <div class="w-12 h-12 bg-orange-100 text-orange-600 rounded-full flex items-center justify-center">
+                                <i data-lucide="cookie" class="w-6 h-6"></i>
+                            </div>
+                            <h3 class="mt-5 text-xl font-semibold text-gray-900">foodpanda 'Pollywood' (2021)</h3>
+                            <div class="mt-4 space-y-3">
+                                <details class="group" open>
+                                    <summary class="flex items-center cursor-pointer list-none">
+                                        <i data-lucide="chevron-right" class="w-4 h-4 text-orange-600 mr-2 transition-transform duration-200 group-open:rotate-90"></i>
+                                        <strong class="text-gray-700">Incident</strong>
+                                    </summary>
+                                    <p class="mt-2 text-gray-600 pl-6">The foodpanda Malaysia “Pollywood” video (2021) featured a Bollywood-inspired theme using distinct Indian cultural signifiers – specifically music, costuming, and choreography – but employed an exclusively non-Indian Malaysian cast.</p>
+                                </details>
+                                <details class="group">
+                                    <summary class="flex items-center cursor-pointer list-none">
+                                        <i data-lucide="chevron-right" class="w-4 h-4 text-orange-600 mr-2 transition-transform duration-200 group-open:rotate-90"></i>
+                                        <strong class="text-gray-700">Backlash</strong>
+                                    </summary>
+                                    <p class="mt-2 text-gray-600 pl-6">This choice provoked widespread condemnation for cultural appropriation and the erasure of Indian-Malaysian representation. Netizens perceived the ad as stereotypical and insensitive, especially near Deepavali, forcing foodpanda to issue a public apology.</p>
+                                </details>
+                                <details class="group">
+                                    <summary class="flex items-center cursor-pointer list-none">
+                                        <i data-lucide="chevron-right" class="w-4 h-4 text-orange-600 mr-2 transition-transform duration-200 group-open:rotate-90"></i>
+                                        <strong class="text-gray-700">Lesson</strong>
+                                    </summary>
+                                    <p class="mt-2 text-gray-600 pl-6">The incident exemplifies the fine line between cultural appreciation and appropriation. It underscores the necessity of authentic casting and including target community voices to validate creative concepts and safeguard against marginalization.</p>
+                                </details>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Case Study 2 -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                        <!-- Image updated with new high-quality link -->
+                        <img src="https://www.scoop.my/canon/uploads/2023/10/Topeng-Mah-Meri-gambar-anuar-faizal.jpg" alt="Mah Meri Case Study" class="w-full h-48 object-cover">
+                        <div class="p-8">
+                            <div class="w-12 h-12 bg-purple-100 text-purple-600 rounded-full flex items-center justify-center">
+                                <i data-lucide="gem" class="w-6 h-6"></i>
+                            </div>
+                            <h3 class="mt-5 text-xl font-semibold text-gray-900">Anuar Faizal & Mah Meri Tribe (2023)</h3>
+                            <div class="mt-4 space-y-3">
+                                <details class="group" open>
+                                    <summary class="flex items-center cursor-pointer list-none">
+                                        <i data-lucide="chevron-right" class="w-4 h-4 text-purple-600 mr-2 transition-transform duration-200 group-open:rotate-90"></i>
+                                        <strong class="text-gray-700">Incident</strong>
+                                    </summary>
+                                    <p class="mt-2 text-gray-600 pl-6">In 2023, CIMB Artober Fashion Week featured a collection from Anuar Faizal that used the Mah Meri indigenous community's ritual spirit-masks (topeng hantu). These profoundly sacred objects were worn by models, including some depicted topless, in a commercial fashion context.</p>
+                                </details>
+                                <details class="group">
+                                    <summary class="flex items-center cursor-pointer list-none">
+                                        <i data-lucide="chevron-right" class="w-4 h-4 text-purple-600 mr-2 transition-transform duration-200 group-open:rotate-90"></i>
+                                        <strong class="text-gray-700">Backlash</strong>
+                                    </summary>
+                                    <p class="mt-2 text-gray-600 pl-6">The village head of the Mah Meri community lodged a police report, alleging cultural mockery and exploitation. Despite the designer’s claims of collaboration, the use of sacred objects without appropriate consent highlighted a failure in ethical sourcing of indigenous heritage.</p>
+                                </details>
+                                <details class="group">
+                                    <summary class="flex items-center cursor-pointer list-none">
+                                        <i data-lucide="chevron-right" class="w-4 h-4 text-purple-600 mr-2 transition-transform duration-200 group-open:rotate-90"></i>
+                                        <strong class="text-gray-700">Lesson</strong>
+                                    </summary>
+                                    <p class="mt-2 text-gray-600 pl-6">This case highlights the ethical obligations surrounding the commercialisation of indigenous intangible cultural heritage. It shows that claims of "collaboration" are insufficient without transparent co-creation and respecting the community's authority over their sacred objects.</p>
+                                </details>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Case Study 3 -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                        <!-- Image updated with new high-quality link -->
+                        <img src="https://focusmalaysia.my/wp-content/uploads/VMY-2026-Main.jpg" alt="VMY2026 Case Study" class="w-full h-48 object-cover">
+                        <div class="p-8">
+                            <div class="w-12 h-12 bg-teal-100 text-teal-600 rounded-full flex items-center justify-center">
+                                <i data-lucide="palmtree" class="w-6 h-6"></i>
+                            </div>
+                            <h3 class="mt-5 text-xl font-semibold text-gray-900">Visit Malaysia Year 2026 (2025)</h3>
+                            <div class="mt-4 space-y-3">
+                                <details class="group" open>
+                                    <summary class="flex items-center cursor-pointer list-none">
+                                        <i data-lucide="chevron-right" class="w-4 h-4 text-teal-600 mr-2 transition-transform duration-200 group-open:rotate-90"></i>
+                                        <strong class="text-gray-700">Incident</strong>
+                                    </summary>
+                                    <p class="mt-2 text-gray-600 pl-6">The 41-second promotional video for Visit Malaysia Year 2026 (launched Jan 2025) showcased religious diversity by featuring non-Muslim places of worship (Batu Caves, an old church) but conspicuously omitted any representation of a mosque, despite Islam being the official religion.</p>
+                                </details>
+                                <details class="group">
+                                    <summary class="flex items-center cursor-pointer list-none">
+                                        <i data-lucide="chevron-right" class="w-4 h-4 text-teal-600 mr-2 transition-transform duration-200 group-open:rotate-90"></i>
+                                        <strong class="text-gray-700">Backlash</strong>
+                                    </summary>
+                                    <p class="mt-2 text-gray-600 pl-6">The omission was interpreted as a significant oversight of Malaysia's core national identity, triggering accusations of insensitivity. Data analysis showed 95% negative sentiment, leading the Tourism Minister to acknowledge the lapse and order a complete revamp.</p>
+                                </details>
+                                <details class="group">
+                                    <summary class="flex items-center cursor-pointer list-none">
+                                        <i data-lucide="chevron-right" class="w-4 h-4 text-teal-600 mr-2 transition-transform duration-200 group-open:rotate-90"></i>
+                                        <strong class="text-gray-700">Lesson</strong>
+                                    </summary>
+                                    <p class="mt-2 text-gray-600 pl-6">This scenario highlights a significant failure in strategic public communication at the national level. It underscores the vital necessity of pre-release cultural and political review to ensure that national branding accurately and inclusively integrates all core cultural and religious symbols.</p>
+                                </details>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 4.0 Strategic Response -->
+        <section id="strategy" class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto">
+                    <h2 class="text-base font-semibold text-blue-600 tracking-wide uppercase">Strategic Response</h2>
+                    <p class="mt-2 text-3xl font-extrabold text-gray-900 sm:text-4xl">
+                        A Framework for a Solution
+                    </p>
+                </div>
+
+                <!-- Image added -->
+                <div class="mt-12 max-w-2xl mx-auto">
+                    <img src="https://www.apqc.org/sites/default/files/styles/landscape_lg/public/2024-02/PPM%20-%20How%20Orgs%20Use%20Framworks%20-%20Website%20Thumbnail.jpg?itok=mmJ8JBzg" alt="Framework" class="rounded-lg shadow-md w-full object-cover">
+                </div>
+                
+                <div class="mt-16 grid md:grid-cols-2 gap-x-12 gap-y-8">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold text-gray-900 flex items-center">
+                            <i data-lucide="target" class="w-7 h-7 text-blue-600 mr-3"></i>
+                            4.1 Communication Strategies
+                        </h3>
+                        <ul class="mt-6 space-y-4 text-lg text-gray-700">
+                            <li class="flex"><i data-lucide="arrow-right-circle" class="w-6 h-6 text-blue-500 mr-3 mt-1 flex-shrink-0"></i>Strengthen Digital Literacy & Cross-Cultural Education.</li>
+                            <li class="flex"><i data-lucide="arrow-right-circle" class="w-6 h-6 text-blue-500 mr-3 mt-1 flex-shrink-0"></i>Adopt Inclusive Communication Frameworks for Brands.</li>
+                            <li class="flex"><i data-lucide="arrow-right-circle" class="w-6 h-6 text-blue-500 mr-3 mt-1 flex-shrink-0"></i>Use Pre-Campaign Cultural Review Panels.</li>
+                        </ul>
+                    </div>
+
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold text-gray-900 flex items-center">
+                            <i data-lucide="shield-check" class="w-7 h-7 text-green-600 mr-3"></i>
+                            4.2 Justification of Strategies
+                        </h3>
+                        <ul class="mt-6 space-y-4 text-lg text-gray-700">
+                            <li class="flex"><i data-lucide="check" class="w-6 h-6 text-green-500 mr-3 mt-1 flex-shrink-0"></i>Builds public trust and prevents reputational crises.</li>
+                            <li class="flex"><i data-lucide="check" class="w-6 h-6 text-green-500 mr-3 mt-1 flex-shrink-0"></i>Cultivates empathy and responsible digital behavior.</li>
+                            <li class="flex"><i data-lucide="check" class="w-6 h-6 text-green-500 mr-3 mt-1 flex-shrink-0"></i>Institutionalizes accountability and transparency.</li>
+                            <li class="flex"><i data-lucide="check" class="w-6 h-6 text-green-500 mr-3 mt-1 flex-shrink-0"></i>Grounded in Hofstede's Theory (proactive) & SCCT (reactive).</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5.0 Recommendations -->
+        <section id="recommendations" class="py-20 bg-gray-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto">
+                    <h2 class="text-base font-semibold text-blue-600 tracking-wide uppercase">Recommendations</h2>
+                    <p class="mt-2 text-3xl font-extrabold text-gray-900 sm:text-4xl">
+                        A Multi-Stakeholder Action Plan
+                    </p>
+                    <p class="mt-4 text-lg text-gray-600">
+                        Addressing this challenge requires a concerted effort from all sectors of society. Select a stakeholder group to see their targeted recommendations.
+                    </p>
+                </div>
+
+                <!-- Tab Navigation -->
+                <div class="mt-12">
+                    <div class="flex flex-wrap justify-center -mb-px space-x-2 sm:space-x-4">
+                        <button class="tab-button tab-active group" data-tab="gov">
+                            <i data-lucide="landmark" class="w-5 h-5 mr-2"></i> Government
+                        </button>
+                        <button class="tab-button" data-tab="corps">
+                            <i data-lucide="briefcase" class="w-5 h-5 mr-2"></i> Corporations
+                        </button>
+                        <button class="tab-button" data-tab="platforms">
+                            <i data-lucide="share-2" class="w-5 h-5 mr-2"></i> Platforms
+                        </button>
+                        <button class="tab-button" data-tab="creators">
+                            <i data-lucide="mic" class="w-5 h-5 mr-2"></i> Creators
+                        </button>
+                        <button class="tab-button" data-tab="ngos">
+                            <i data-lucide="school" class="w-5 h-5 mr-2"></i> NGOs
+                        </button>
+                        <button class="tab-button" data-tab="public">
+                            <i data-lucide="users" class="w-5 h-5 mr-2"></i> Public
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Tab Content -->
+                <div class="mt-8 bg-white p-8 md:p-12 rounded-xl shadow-xl">
+                    <!-- Government -->
+                    <div id="gov" class="tab-content space-y-4">
+                        <img src="https://world101.cfr.org/sites/default/files/styles/fluid_1200/public/images/photo/2020/09/US-Capitol-Building-Stock-760-380.jpg.webp" alt="Government" class="w-full h-48 object-cover rounded-lg shadow-md mb-6">
+                        <h3 class="text-2xl font-semibold text-gray-900 mb-5">5.1 Government and Regulatory Bodies</h3>
+                        <details class="group rounded-lg bg-gray-100 p-4" open>
+                            <summary class="flex items-center justify-between cursor-pointer list-none">
+                                <span class="font-semibold text-gray-800 text-lg">Integrate Digital Citizenship into National Curriculum</span>
+                                <i data-lucide="chevron-down" class="w-5 h-5 text-gray-500 transition-transform duration-200 group-open:rotate-180"></i>
+                            </summary>
+                            <p class="mt-3 text-gray-700 text-base">The Ministry of Education, in collaboration with the Ministry of Communications, should mandate the integration of digital literacy and intercultural communication modules into the national school curriculum, from primary through tertiary education. This initiative directly supports Strategy 4.1(a) by formally equipping young Malaysians with the critical thinking and empathetic skills needed to navigate diverse online spaces.</p>
+                        </details>
+                        <details class="group rounded-lg bg-gray-100 p-4">
+                            <summary class="flex items-center justify-between cursor-pointer list-none">
+                                <span class="font-semibold text-gray-800 text-lg">Launch National Digital Etiquette Campaigns</span>
+                                <i data-lucide="chevron-down" class="w-5 h-5 text-gray-500 transition-transform duration-200 group-open:rotate-180"></i>
+                            </summary>
+                            <p class="mt-3 text-gray-700 text-base">Fund and launch high-visibility Public Service Announcements (PSAs) across all major media platforms (including TikTok, X, and Instagram) that promote core values of respect, empathy, and critical thinking online. This campaign should use simple, memorable messaging (e.g., "Think Before You Share," "Respect Our Diversity") in multiple languages.</p>
+                        </details>
+                        <details class="group rounded-lg bg-gray-100 p-4">
+                            <summary class="flex items-center justify-between cursor-pointer list-none">
+                                <span class="font-semibold text-gray-800 text-lg">Mandate Cultural Review Panels</span>
+                                <i data-lucide="chevron-down" class="w-5 h-5 text-gray-500 transition-transform duration-200 group-open:rotate-180"></i>
+                            </summary>
+                            <p class="mt-3 text-gray-700 text-base">Following the Visit Malaysia Year 2026 (VMY2026) controversy (3.3), all government ministries and their agencies must be required to implement pre-campaign cultural review panels (Strategy 4.1(c)) to vet all public-facing promotional materials, ensuring all of Malaysia's core cultural and religious identities are represented accurately and respectfully.</p>
+                        </details>
+                    </div>
+                    <!-- Corporations -->
+                    <div id="corps" class="tab-content hidden space-y-4">
+                        <img src="https://cdn.corporatefinanceinstitute.com/assets/corporation.jpg" alt="Corporations" class="w-full h-48 object-cover rounded-lg shadow-md mb-6">
+                        <h3 class="text-2xl font-semibold text-gray-900 mb-5">5.2 Corporations, Brands, and Advertising Agencies</h3>
+                        <details class="group rounded-lg bg-gray-100 p-4" open>
+                            <summary class="flex items-center justify-between cursor-pointer list-none">
+                                <span class="font-semibold text-gray-800 text-lg">Mandate Cultural Competency Training</span>
+                                <i data-lucide="chevron-down" class="w-5 h-5 text-gray-500 transition-transform duration-200 group-open:rotate-180"></i>
+                            </summary>
+                            <p class="mt-3 text-gray-700 text-base">As proposed in Strategy 4.1(b), corporations must move beyond optional workshops and mandate annual cultural competency, unconscious bias, and sensitivity training for all personnel in marketing, public relations, and creative departments.</p>
+                        </details>
+                        <details class="group rounded-lg bg-gray-100 p-4">
+                            <summary class="flex items-center justify-between cursor-pointer list-none">
+                                <span class="font-semibold text-gray-800 text-lg">Establish Diverse Creative & Review Councils</span>
+                                <i data-lucide="chevron-down" class="w-5 h-5 text-gray-500 transition-transform duration-200 group-open:rotate-180"></i>
+                            </summary>
+                            <p class="mt-3 text-gray-700 text-base">Brands should formalise the "diverse teams" concept (4.1(b)) by establishing internal or external "Diverse Creative Councils." These councils, comprising members from various Malaysian ethnic and religious backgrounds, must be empowered to review and advise on campaign concepts during the ideation stage, not just before launch, to prevent missteps like the foodpanda "Pollywood" case (3.1).</p>
+                        </details>
+                        <details class="group rounded-lg bg-gray-100 p-4">
+                            <summary class="flex items-center justify-between cursor-pointer list-none">
+                                <span class="font-semibold text-gray-800 text-lg">Adopt Ethical Cultural Sourcing Charters</span>
+                                <i data-lucide="chevron-down" class="w-5 h-5 text-gray-500 transition-transform duration-200 group-open:rotate-180"></i>
+                            </summary>
+                            <p class="mt-3 text-gray-700 text-base">For any campaign intending to use cultural heritage, particularly indigenous elements (as seen in the Mah Meri case, 3.2), brands must develop, publish, and adhere to an "Ethical Sourcing Charter." This charter must legally bind them to processes of genuine collaboration, fair compensation, and explicit community consent on how sacred or traditional signifiers are portrayed.</p>
+                        </details>
+                    </div>
+                    <!-- Platforms -->
+                    <div id="platforms" class="tab-content hidden space-y-4">
+                        <img src="https://www.silvermouse.com.my/wp-content/uploads/2022/10/top-social-media-platforms-malaysia.jpg" alt="Social Media Platforms" class="w-full h-48 object-cover rounded-lg shadow-md mb-6">
+                        <h3 class="text-2xl font-semibold text-gray-900 mb-5">5.3 Social Media Platforms (e.g., Meta, TikTok, X)</h3>
+                        <details class="group rounded-lg bg-gray-100 p-4" open>
+                            <summary class="flex items-center justify-between cursor-pointer list-none">
+                                <span class="font-semibold text-gray-800 text-lg">Algorithmically Promote Digital Literacy</span>
+                                <i data-lucide="chevron-down" class="w-5 h-5 text-gray-500 transition-transform duration-200 group-open:rotate-180"></i>
+                            </summary>
+                            <p class="mt-3 text-gray-700 text-base">Platforms should actively collaborate with the Malaysian government and local NGOs to identify and algorithmically boost high-quality, localized digital literacy and cultural sensitivity content, making it more visible to Malaysian users.</p>
+                        </details>
+                        <details class="group rounded-lg bg-gray-100 p-4">
+                            <summary class="flex items-center justify-between cursor-pointer list-none">
+                                <span class="font-semibold text-gray-800 text-lg">Enhance Localised Content Moderation</span>
+                                <i data-lucide="chevron-down" class="w-5 h-5 text-gray-500 transition-transform duration-200 group-open:rotate-180"></i>
+                            </summary>
+                            <p class="mt-3 text-gray-700 text-base">Invest in and expand local content moderation teams who understand Malaysian cultural nuances, slang, and multilingual code-switching. This is crucial for more effectively identifying and mitigating the spread of stereotyping and hate speech, which was identified as a key cause in Section 2.1.</p>
+                        </details>
+                        <details class="group rounded-lg bg-gray-100 p-4">
+                            <summary class="flex items-center justify-between cursor-pointer list-none">
+                                <span class="font-semibold text-gray-800 text-lg">Pilot "Sensitivity Nudges"</span>
+                                <i data-lucide="chevron-down" class="w-5 h-5 text-gray-500 transition-transform duration-200 group-open:rotate-180"></i>
+                            </summary>
+                            <p class="mt-3 text-gray-700 text-base">Develop and test "nudge" features that prompt users to pause and reconsider before posting content that algorithms flag as potentially insensitive, stereotypical, or related to "3R" (Race, Religion, Royalty) issues.</p>
+                        </details>
+                    </div>
+                    <!-- Creators -->
+                    <div id="creators" class="tab-content hidden space-y-4">
+                        <img src="https://images.prismic.io/maukerja/Zr2090aF0TcGI8zl_Tugascontentcreator.jpeg?auto=format,compress" alt="Content Creators" class="w-full h-48 object-cover rounded-lg shadow-md mb-6">
+                        <h3 class="text-2xl font-semibold text-gray-900 mb-5">5.4 Content Creators and Social Media Influencers</h3>
+                        <details class="group rounded-lg bg-gray-100 p-4" open>
+                            <summary class="flex items-center justify-between cursor-pointer list-none">
+                                <span class="font-semibold text-gray-800 text-lg">Adopt a "Conscious Creator" Pledge</span>
+                                <i data-lucide="chevron-down" class="w-5 h-5 text-gray-500 transition-transform duration-200 group-open:rotate-180"></i>
+                            </summary>
+                            <p class="mt-3 text-gray-700 text-base">Influencers and the agencies that represent them should collectively adopt an ethical pledge. This pledge would commit them to fact-checking, refusing briefs that promote harmful stereotypes, and using their platforms to model responsible and respectful digital behaviour.</p>
+                        </details>
+                        <details class="group rounded-lg bg-gray-100 p-4">
+                            <summary class="flex items-center justify-between cursor-pointer list-none">
+                                <span class="font-semibold text-gray-800 text-lg">Champion "Pause, Ponder, Post"</span>
+                                <i data-lucide="chevron-down" class="w-5 h-5 text-gray-500 transition-transform duration-200 group-open:rotate-180"></i>
+                            </summary>
+                            <p class="mt-3 text-gray-700 text-base">Influencers should actively use their platforms to champion a culture of "Pause, Ponder, Post," encouraging their millions of followers to think critically about the potential impact and interpretation of their content before sharing, directly combating the "fast-paced posting culture" (2.1).</p>
+                        </details>
+                    </div>
+                    <!-- NGOs -->
+                    <div id="ngos" class="tab-content hidden space-y-4">
+                        <img src="https://static.vecteezy.com/system/resources/previews/012/919/718/non_2x/ngo-or-non-governmental-organization-to-serve-specific-social-and-political-needs-in-template-hand-drawn-cartoon-flat-illustration-vector.jpg" alt="NGOs" class="w-full h-48 object-cover rounded-lg shadow-md mb-6">
+                        <h3 class="text-2xl font-semibold text-gray-900 mb-5">5.5 Educators and Non-Governmental Organisations (NGOs)</h3>
+                        <details class="group rounded-lg bg-gray-100 p-4" open>
+                            <summary class="flex items-center justify-between cursor-pointer list-none">
+                                <span class="font-semibold text-gray-800 text-lg">Develop Community-Level Toolkits</span>
+                                <i data-lucide="chevron-down" class="w-5 h-5 text-gray-500 transition-transform duration-200 group-open:rotate-180"></i>
+                            </summary>
+                            <p class="mt-3 text-gray-700 text-base">Create and disseminate accessible, multilingual toolkits and workshops on "Intercultural Communication for Social Media" for community leaders, parents, and religious groups, extending digital literacy beyond the formal education system.</p>
+                        </details>
+                        <details class="group rounded-lg bg-gray-100 p-4">
+                            <summary class="flex items-center justify-between cursor-pointer list-none">
+                                <span class="font-semibold text-gray-800 text-lg">Establish Online Harassment Support Services</span>
+                                <i data-lucide="chevron-down" class="w-5 h-5 text-gray-500 transition-transform duration-200 group-open:rotate-180"></i>
+                            </summary>
+                            <p class="mt-3 text-gray-700 text-base">NGOs focused on mental health and social cohesion should develop specialized support channels (e.g., dedicated hotlines or chat services) for individuals experiencing the personal harms (as identified in 2.2) of online bullying, stereotyping, and cultural-based harassment.</p>
+                        </details>
+                    </div>
+                    <!-- Public -->
+                    <div id="public" class="tab-content hidden space-y-4">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUGSO1yO2QSR86aS3Go7xwsaJE2eyhUNV8zw&s" alt="Public" class="w-full h-48 object-cover rounded-lg shadow-md mb-6">
+                        <h3 class="text-2xl font-semibold text-gray-900 mb-5">5.6 The General Public (Netizens)</h3>
+                        <details class="group rounded-lg bg-gray-100 p-4" open>
+                            <summary class="flex items-center justify-between cursor-pointer list-none">
+                                <span class="font-semibold text-gray-800 text-lg">Practice Personal Accountability and Empathy</span>
+                                <i data-lucide="chevron-down" class="w-5 h-5 text-gray-500 transition-transform duration-200 group-open:rotate-180"></i>
+                            </summary>
+                            <p class="mt-3 text-gray-700 text-base">The public must move from a "cancel culture" to a proactive culture of personal accountability. This includes verifying information before sharing, being mindful that humour and language can be misinterpreted (2.1), and engaging in respectful dialogue.</p>
+                        </details>
+                        <details class="group rounded-lg bg-gray-100 p-4">
+                            <summary class="flex items-center justify-between cursor-pointer list-none">
+                                <span class="font-semibold text-gray-800 text-lg">Curate a Diverse "Digital Diet"</span>
+                                <i data-lucide="chevron-down" class="w-5 h-5 text-gray-500 transition-transform duration-200 group-open:rotate-180"></i>
+                            </Deta>
+                            <p class="mt-3 text-gray-700 text-base">Users should make a conscious effort to follow and engage with content creators from different Malaysian cultural, ethnic, and religious backgrounds. This broadens personal perspectives, builds empathy, and actively uses social media to bridge cultural divides rather than reinforce them.</p>
+                        </details>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6.0 Conclusion -->
+        <section id="conclusion" class="py-20 bg-blue-700 text-white">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <!-- Image updated -->
+                <img src="https://www.superstock.com/cdn/5507/Comp/5507-58639442.webp" alt="Fostering Unity" class="rounded-lg shadow-lg mx-auto w-full max-w-lg h-64 object-cover">
+                <h2 class="mt-8 text-3xl font-extrabold sm:text-4xl">6.0 Conclusion</h2>
+                <p class="mt-6 text-xl text-blue-100">
+                    The social media explosion has magnified the risk of cultural miscommunication, but these challenges are not insurmountable. The case studies demonstrate that cultural sensitivity is not merely an ethical consideration but a **strategic imperative** for reputational and societal survival.
+                </p>
+                <p class="mt-6 text-xl text-blue-100">
+                    Fostering an ethical, inclusive, and culturally aware digital environment is **vital for preserving social cohesion** in Malaysia’s multicultural society. This requires continuous integration of cultural awareness and shared accountability at every level of digital interaction.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-gray-400 py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h3 class="text-lg font-semibold text-white">Group 1G: Social Media Explosion</h3>
+            <p class="mt-2 text-sm">PBK4194 — Seminar on Issues in Strategic Communication</p>
+            
+            <div class="mt-8 border-t border-gray-700 pt-8">
+                <h4 class="text-base font-medium text-white">Group Members</h4>
+                <div class="mt-4 grid grid-cols-2 md:grid-cols-3 gap-x-4 gap-y-2 text-sm">
+                    <span>Marlene Ram Anak Bonnie</span>
+                    <span>Ayra Nahida Abdul Aziz</span>
+                    <span>Adibfahmy Fathullah Bin Rosli</span>
+                    <span>Asha Nasrin Binti Abdullah Ya’acob</span>
+                    <span>Syed Putera Bin Syed Azmi</span>
+                    <span>Zafirah Binti Hilmi</span>
+                </div>
+            </div>
+            
+            <p class="mt-10 text-xs">&copy; 2025 UNIMAS. All content derived from group report.</p>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#intro" id="back-to-top" class="fixed bottom-6 right-6 bg-blue-600 hover:bg-blue-700 text-white p-3 rounded-full shadow-lg z-50">
+        <i data-lucide="arrow-up" class="w-6 h-6"></i>
+        <span class="sr-only">Back to top</span>
+    </a>
+
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // --- Mobile Menu Toggle ---
+            const menuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileMenuIcon = menuButton.querySelector('i');
+
+            menuButton.addEventListener('click', () => {
+                const isHidden = mobileMenu.classList.toggle('hidden');
+                if (isHidden) {
+                    mobileMenuIcon.setAttribute('data-lucide', 'menu');
+                } else {
+                    mobileMenuIcon.setAttribute('data-lucide', 'x');
+                }
+                lucide.createIcons(); // Re-render icon
+            });
+
+            // Close mobile menu when a link is clicked
+            const mobileLinks = mobileMenu.querySelectorAll('a');
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                    mobileMenuIcon.setAttribute('data-lucide', 'menu');
+                    lucide.createIcons();
+                });
+            });
+
+
+            // --- Tabbed Interface for Recommendations ---
+            const tabButtons = document.querySelectorAll('.tab-button');
+            const tabContents = document.querySelectorAll('.tab-content');
+
+            // Apply Tailwind classes to tab buttons
+            tabButtons.forEach(button => {
+                button.classList.add(
+                    'flex', 'items-center', 'justify-center', 'px-3', 'py-2', 'sm:px-4', 'sm:py-3', 
+                    'font-medium', 'text-sm', 'sm:text-base', 'rounded-t-lg', 
+                    'border-b-2', 'transition-all', 'duration-200', 'whitespace-nowrap'
+                );
+                
+                if (!button.classList.contains('tab-active')) {
+                     button.classList.add('border-transparent', 'text-gray-500', 'hover:text-gray-700', 'hover:border-gray-300');
+                } else {
+                     button.classList.add('border-blue-600', 'text-blue-600', 'bg-blue-50');
+                }
+            });
+
+
+            tabButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const tabId = button.dataset.tab;
+
+                    // Deactivate all buttons and hide all content
+                    tabButtons.forEach(btn => {
+                        btn.classList.remove('tab-active', 'border-blue-600', 'text-blue-600', 'bg-blue-50');
+                        btn.classList.add('border-transparent', 'text-gray-500', 'hover:text-gray-700', 'hover:border-gray-300');
+                    });
+                    tabContents.forEach(content => {
+                        content.classList.add('hidden');
+                    });
+
+                    // Activate the clicked button and show its content
+                    button.classList.add('tab-active', 'border-blue-600', 'text-blue-600', 'bg-blue-50');
+                    button.classList.remove('border-transparent', 'text-gray-500', 'hover:text-gray-700', 'hover:border-gray-300');
+                    document.getElementById(tabId).classList.remove('hidden');
+                });
+            });
+
+            // --- Active Nav Link Scrolling ---
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.nav-link'); // Desktop links
+            const mobileNavLinks = document.querySelectorAll('.nav-link-mobile'); // Mobile links
+
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.4 // 40% of the section must be visible
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const id = entry.target.getAttribute('id');
+                        
+                        // Update desktop nav
+                        navLinks.forEach(link => {
+                            link.classList.remove('nav-active');
+                            if (link.getAttribute('href') === `#${id}`) {
+                                link.classList.add('nav-active');
+                            }
+                        });
+                        
+                        // Update mobile nav
+                        mobileNavLinks.forEach(link => {
+                            link.classList.remove('bg-blue-50', 'text-blue-700');
+                            if (link.getAttribute('href') === `#${id}`) {
+                                link.classList.add('bg-blue-50', 'text-blue-700');
+                            }
+                        });
+                    }
+                });
+            }, observerOptions);
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+
+            // --- Back to Top Button Logic ---
+            const backToTopButton = document.getElementById('back-to-top');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 400) {
+                    backToTopButton.classList.add('visible');
+                } else {
+                    backToTopButton.classList.remove('visible');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
